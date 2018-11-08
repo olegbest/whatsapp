@@ -18,12 +18,12 @@ app.post("/test", async function (req, res) {
     console.log("Rabotaet");
     console.log(req.body);
     client.messages.create({
-        body: 'Hello from Node',
-        to: `+375292031044`,  // Text this number
-        from: '+14155238886' // From a valid Twilio number
+        to: `'whatsapp:+375292031044`,  // Text this number
+        from: 'whatsapp:+14155238886', // From a valid Twilio number
+        body: 'Hello from Node'
     })
         .then((message) => console.log(message.sid));
-    res.send("132")
+    res.sendStatus(200)
 });
 
 
