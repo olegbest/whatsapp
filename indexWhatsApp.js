@@ -17,8 +17,9 @@ app.use(bodyParser.json());
 app.post("/test", async function (req, res) {
     console.log("Rabotaet");
     console.log(req.body);
+    console.log(req.From    );
     client.messages.create({
-        to: `${req.body.from}`,  // Text this number
+        to: `${req.body.From}`,  // Text this number
         from: 'whatsapp:+14155238886', // From a valid Twilio number
         body: 'Hello from Node'
     })
