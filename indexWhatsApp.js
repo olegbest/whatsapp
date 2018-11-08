@@ -14,16 +14,16 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-app.post("/test", function (req, res) {
+app.post("/test", async function (req, res) {
     console.log("Rabotaet");
     console.log(req.body);
     client.messages.create({
         body: 'Hello from Node',
-        to: `${req.body.from}`,  // Text this number
+        to: `+375292031044`,  // Text this number
         from: '+14155238886' // From a valid Twilio number
     })
         .then((message) => console.log(message.sid));
-    res.sendStatus(200)
+    res.send("132")
 });
 
 
